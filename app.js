@@ -12,13 +12,16 @@ const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 // app
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
-// Set view engine as EJS
-app.engine('ejs', require('ejs').renderFile);
-app.set('view engine', 'ejs');
-// Set 'views' directory for any views 
-// being rendered res.render()
-app.set('views', path.join(__dirname, 'views'));
+// Require static assets from public folder 
+app.use(express.static(path.join(__dirname, 'public'))); 
+ 
+// Set 'views' directory for any views  
+// being rendered res.render() 
+app.set('views', path.join(__dirname, 'views')); 
+ 
+// Set view engine as EJS 
+app.engine('html', require('ejs').renderFile); 
+app.set('view engine', 'html'); 
 
 //console.log(process.env);
 // connect
