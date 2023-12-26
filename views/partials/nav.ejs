@@ -1,0 +1,16 @@
+<nav>
+  <div class="site-title">
+    <a href="/"><h1>Agile Notes</h1></a>
+  </div>
+  <ul>
+    <% if(user) { %>
+      <li><h3>Welcome, <%= user.email %></h3> </li>
+      <li><a href="/notes/create">New Note</a></li>
+      <li><a href="/">My Notes</a></li>
+      <li><a href="/logout">Log Out</a></li>
+    <% } else { %>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/signup">Sign Up</a></li>
+    <% } %>
+  </ul>
+</nav>

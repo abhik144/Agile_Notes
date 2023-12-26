@@ -1,0 +1,27 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+  
+  <div class="main notes content">
+    <h2>All Notes</h2>
+
+    <% if (notes.length > 0) { %>
+      <% notes.forEach(note => { %>
+        <% if(note.objid == user.email) { %>
+          <a class="single" href="/notes/<%= note._id %>">
+            <h3 class="title"><%= note.title %></h3>
+            <p class="snippet"><%= note.snippet %></p>
+          </a>
+        <% } %>
+      <% }) %>
+    <% } else { %>
+      <p>There are no notes to display...</p>
+    <% } %>
+    
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>
