@@ -45,7 +45,7 @@ const signup_get = (req,res) => {
 }
 
 const login_get = (req,res) => {
-    res.render('login',{ title: 'Login'});
+    res.render('login.ejs',{ title: 'Login'});
 }
 
 const signup_post = async (req,res) => {
