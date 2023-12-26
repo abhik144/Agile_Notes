@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "name":"Agile_Notes",
+  "builds": [
+    {
+      "src": "app.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "app.js"
+    }
+  ]
+}
