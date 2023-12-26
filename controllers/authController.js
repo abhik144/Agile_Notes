@@ -41,7 +41,7 @@ const createToken = (id) => {
 
 // controller
 const signup_get = (req,res) => {
-    res.render('signup',{ title: 'Sign Up'});
+    res.render('signup.ejs',{ title: 'Sign Up'});
 }
 
 const login_get = (req,res) => {
