@@ -3,7 +3,7 @@ const Note = require('../models/note');
 const note_index = (req, res) => {
   Note.find().sort()
     .then(result => {
-      res.render('index', { notes: result, title: 'All notes' });
+      res.render('index.ejs', { notes: result, title: 'All notes' });
     })
     .catch(err => {
       console.log(err);
@@ -14,16 +14,16 @@ const note_details = (req, res) => {
   const id = req.params.id;
   Note.findById(id)
     .then(result => {
-      res.render('details', { note: result, title: 'Note Details' });
+      res.render('details.ejs', { note: result, title: 'Note Details' });
     })
     .catch(err => {
       console.log(err);
-      res.render('404', { title: 'Note not found' });
+      res.render('404.ejs', { title: 'Note not found' });
     });
 }
 
 const note_create_get = (req, res) => {
-  res.render('create', { title: 'Create a new note' });
+  res.render('create.ejs', { title: 'Create a new note' });
 }
 
 const note_create_post = (req, res) => {
@@ -42,11 +42,11 @@ const note_update_get = (req,res) => {
   const id = req.params.id;
   Note.findById(id)
     .then(result => {
-      res.render('update', { note: result, title: 'Update a Note' });
+      res.render('update.ejs', { note: result, title: 'Update a Note' });
     })
     .catch(err => {
       console.log(err);
-      res.render('404', { title: 'Note not found' });
+      res.render('404.ejs', { title: 'Note not found' });
     });
 }
 
