@@ -1,6 +1,7 @@
 // imports
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 require('dotenv').config();
 
 const noteRoutes = require('./routes/noteRoutes');
@@ -22,6 +23,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCr
 
 // view engine
 app.set('view engine','ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 // middleware
 app.use(express.static('public'));
